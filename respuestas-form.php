@@ -1,10 +1,11 @@
 <?php
 	$id = isset($_GET['id']) ? $_GET ['id']: 0;
+	$accion = isset($_GET['action']) ? $_GET ['action']: 0;
 	$idpregunta = "";
 	$respuesta = "";
 	$correcta=0;
 		
-	if ($id>0)
+	if (accion == "editar")
 	{
 		$accion = 'editar';
 		//Abro la conexion con la base
@@ -35,7 +36,7 @@
 	<input type = "text" id="idPregunta" name= "idPregunta" value="<?php echo $id; ?>" />
 	<br> <br>
 	<label>Respuesta:</label>
-	<input type = "text" id="Respuesta" name= "Respuesta" value="<?php echo $respuesta; ?>" />
+	<input type = "text" id="respuesta" name= "respuesta" value="<?php echo $respuesta; ?>" />
 	
 	<label>Correcta:</label>
 	<select name="Rcorrecta" id="Rcorrecta">

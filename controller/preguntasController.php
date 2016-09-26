@@ -12,13 +12,12 @@ switch ($accion)
 			$pregunta = new pregunta();
 			$pregunta->nombre = $_POST['nombre'];
 			$pregunta->idcategoria= $_POST['idcategoria'];
-			$id = PreguntaDao::Insertar($pregunta);
-			$redireccion = "/preguntados/respuestas-form.php?idpregunta=" . $id;
+			PreguntaDao::Insertar($pregunta);
 			break;
 			
 		case 'eliminar':						
 			PreguntaDao::Eliminar($_GET['id']);
-			$redireccion = "Location: /preguntados/preguntas-listado.php";
+
 			break;
 			
 		case 'editar':			
@@ -26,9 +25,9 @@ switch ($accion)
 			$pregunta->nombre = $_POST['nombre'];
 			$pregunta->idcategoria= $_POST['idcategoria'];
 			PreguntaDao::Actualizar($pregunta);
-			$redireccion = "Location: /preguntados/preguntas-listado.php";
+
 			break;		
 }
 
-header("Location: " . $redireccion);
+header("Location: /preguntados/preguntas-listado.php");
 ?>

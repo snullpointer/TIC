@@ -34,7 +34,7 @@
 				<td>'.$reg['respuesta'].' </td>
 				<td>'.$reg['correcta'].'</td>
 				<td>
-					<a href= "/preguntados/respuestas-form.php?id='.$reg['id'].'">Editar</a>
+					<a href= "/preguntados/respuestas-form.php?id='.$reg['id'].'&action=editar">Editar</a>
 					<a href= "/preguntados/controller/respuestasController.php?id='.$reg['id'].'&action=eliminar">Eliminar</a>
 				</td>
 			</tr>
